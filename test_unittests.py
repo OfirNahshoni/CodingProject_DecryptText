@@ -9,7 +9,7 @@ class TestFiles(unittest.TestCase):
     # def setUp(self):
     #     self.message = ''
     
-    # Test methods
+    # Test method for readTxtFile method
     def test_isReadTxtString_readTxtFile(self):
         # Checks if the returned value of the function readTxtFile is a string type
         self.assertIsInstance(decrypt_message.readTxtFile(decrypt_message.ENC_MSG_FILENAME1), str)
@@ -26,6 +26,8 @@ class TestFiles(unittest.TestCase):
         with open(decrypt_message.ENC_MSG_FILENAME3, 'r') as file:
             txt = file.read()
         self.assertEqual(decrypt_message.readTxtFile(decrypt_message.ENC_MSG_FILENAME3), txt)
+
+    # Need to be added to more functions
 
 
 if __name__ == '__main__':

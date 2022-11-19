@@ -1,8 +1,11 @@
 # Project 1 Python Course (Devops experts)
 # The purpose of this project is to practice the knowledge I have so far with course material:
 # Strings, Operators, Loops, Nested loops, Conditions, Lists, Dictionaries, Files manipulation, Functions, Exceptions, Assertions, unit tests.
-# This project encrypts a message from a given text file (which is encrypted).
-# The decrypted message as an output is written to a new file.
+# This project decrypts a message from a given text file (which is encrypted),
+# appends the encryption to the original file and writes it to a new text file.
+# Finally, the program finds the longest words in the second text file (with the decryption only)
+# and appends the (first) longest word into the original text file as the number of lines in the second file.
+# re package is for regular expressions to find patterns in a string - finds the alphabetical letters in a word.
 # Unit Tests - there are 2 options to run the unit tests I wrote:
 # Run the file test_unittests.py from the IDE or
 # Write in CMD (make sure you are on thee right directory): python -m unittest test_unittests.py
