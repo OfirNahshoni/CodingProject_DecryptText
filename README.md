@@ -9,8 +9,8 @@ Functions and files manipulating (text files).
 Assertions and exceptions.
 
 # Run
-To run unit tests (unittest build-in package of python) - in CMD:
+## To run unit tests (unittest build-in package of python) - in CMD:
 python -m unittest test_unittests.py
-To run the main program - in CMD:
+## To run the main program - in CMD:
 python -m decrypt_message
 
