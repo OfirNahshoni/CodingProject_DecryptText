@@ -27,8 +27,6 @@ class TestFiles(unittest.TestCase):
             txt = file.read()
         self.assertEqual(decrypt_message.readTxtFile(decrypt_message.ENC_MSG_FILENAME3), txt)
 
-    # Need to be added to more functions
-
 
 if __name__ == '__main__':
     unittest.main()

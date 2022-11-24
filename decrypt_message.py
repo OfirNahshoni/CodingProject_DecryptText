@@ -170,8 +170,11 @@ def longestWordsInFile(filepath):
 
 def numOfLines(filepath):
     # Returns an integer - number of lines in a text file
-    with open(filepath, 'r') as file:
-        return len(file.readlines())
+    try:
+        with open(filepath, 'r') as file:
+            return len(file.readlines())
+    except FileNotFoundError:
+        raise Exception('File doesnt exist in the system')
 
 def appendLongestWordToFile(filepath, word, amount = 0):
     # Append to a text file the string 'word', 'amount' times
@@ -179,7 +182,7 @@ def appendLongestWordToFile(filepath, word, amount = 0):
         file.write('\n')
         for i in range(amount):
             file.write(word + ' ')
-        print('Longest word has been added to original file successfully')
+        print(f'Longest word \'{word}\' has been added to the original file successfully')
 
 
 # Main process
@@ -204,25 +207,37 @@ if __name__ == '__main__':
     decode_text(ENC_MSG_FILENAME1, 'result1.txt')
     longest_words = longestWordsInFile('result1.txt')
     print(f"Longest words are:\n{longest_words}")
-    num_of_lines = numOfLines('result1.txt')
-    appendLongestWordToFile(ENC_MSG_FILENAME1, longest_words[0], num_of_lines)
-    print('--------------------------------------------------------------\n')
+    try:
+        num_of_lines = numOfLines('result1.txt')
+        appendLongestWordToFile(ENC_MSG_FILENAME1, longest_words[0], num_of_lines)
+    except Exception as e:
+        print(f'Exception has been raised: {str(e)}')
+    finally:
+        print('--------------------------------------------------------------\n')
 
     print('-------------------------- Result 2 --------------------------')
     decode_text(ENC_MSG_FILENAME2, 'result2.txt')
     longest_words = longestWordsInFile('result2.txt')
     print(f"Longest words are:\n{longest_words}")
-    num_of_lines = numOfLines('result2.txt')
-    appendLongestWordToFile(ENC_MSG_FILENAME2, longest_words[0], num_of_lines)
-    print('--------------------------------------------------------------\n')
+    try:
+        num_of_lines = numOfLines('result2.txt')
+        appendLongestWordToFile(ENC_MSG_FILENAME2, longest_words[0], num_of_lines)
+    except Exception as e:
+        print(f'Exception has been raised: {str(e)}')
+    finally:
+        print('--------------------------------------------------------------\n')
 
     print('-------------------------- Result 3 --------------------------')
     decode_text(ENC_MSG_FILENAME3, 'result3.txt')
     longest_words = longestWordsInFile('result3.txt')
     print(f"Longest words are:\n{longest_words}")
-    num_of_lines = numOfLines('result3.txt')
-    appendLongestWordToFile(ENC_MSG_FILENAME3, longest_words[0], num_of_lines)
-    print('--------------------------------------------------------------\n')
+    try:
+        num_of_lines = numOfLines('result3.txt')
+        appendLongestWordToFile(ENC_MSG_FILENAME3, longest_words[0], num_of_lines)
+    except Exception as e:
+        print(f'Exception has been raised: {str(e)}')
+    finally:
+        print('--------------------------------------------------------------\n')
 
     
     '''
